@@ -1,0 +1,65 @@
+"""
+Questionnaire: For what purposes did you use Generative AI / LLMs when completing your assignment?
+[] Not at all
+[x] Which ones did you use? (e.g., ChatGPT, Bard, etc.) ChatGPT
+[] Explaining programming concepts
+[] Practicing coding exercises
+[] Debugging code
+[x] Reviewing your Python code
+[] Optimizing code
+[] Writing or completing code
+[] Other (please specify): _____________
+
+"""
+
+width_str = input("What is the width of the room in meters?")
+length_str = input("What is the length of the room in meters?")
+height_str = input("What is the height of the room in meters?")
+
+width = float(width_str)
+length = float(length_str)
+height = float(height_str)
+
+volume_room_m3 = width*length*height
+area_room_m2 = width*length
+
+print("The volume of the room is {} cubic meters".format(volume_room_m3))
+print("The area of the room is {} square meters".format(area_room_m2))
+
+
+volume_room_mm3 = width*length*height*10**9
+area_room_mm2 = width*length*10**6
+
+print("The volume of the room is {} cubic millimeters".format(volume_room_mm3))
+print("The area of the room is {} square millimeters".format(area_room_mm2))
+
+
+if width == length == height:
+    print("All dimensions are equal.")
+
+elif width == length and width > height:
+    print("The width and length are equal and they both greater than height.")
+
+elif width == height and width > length:
+    print("The width and height are equal and they both greater than length.")
+
+elif height == length and height > width:
+    print("The height and length are equal and they both greater than width.")
+
+elif width == length and width < height:
+    print("The width and length are equal and they both less than height.")
+
+elif width == height and width < length:
+    print("The width and height are equal and they both less than length.")
+
+elif height == length and height < width:
+    print("The height and length are equal and they both less than width.")
+
+elif width > length and width > height:
+    print("The width of your room surpasses both its length and height.")
+
+elif length > width and length > height:
+    print("The length of your room surpasses both its width and height.")
+
+elif height > width and height > length:
+    print("The height of your room surpasses both its width and length.")
